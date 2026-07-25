@@ -6,7 +6,7 @@ resource "google_compute_firewall" "gke_ingress" {
   network       = var.network
   direction     = "INGRESS"
   source_ranges = var.firewall_source_ranges
-  target_tags   = ["gke-${var.cluster_name}"]
+  target_tags   = ["${var.cluster_name}-gke-node"]
 
   allow {
     protocol = "tcp"
